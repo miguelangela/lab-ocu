@@ -10,5 +10,11 @@ jobs:
           name: install
           command: 'npm install'
       - run:
+          name: build
+          environment:
+            NODE_ENV: test
+            BASE_API_URL: https://localhost:8081
+          command: 'npm run build'
+      - run:
           name: test
           command: 'npm test'
